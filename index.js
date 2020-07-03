@@ -10,8 +10,8 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.post('/htmlToPdf', upload.single('file'), (req, res) => {
-    console.log(req.body);
     console.log(req.file);
+    // convertHtmlToPdf(req.file.toJSON(), (pdf)=>res.send(pdf)); 
     res.send('You are hitting root.');
 });
 
